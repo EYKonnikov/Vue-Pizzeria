@@ -1,8 +1,8 @@
 <template>
   <header class="row">
-    <nav class="navbar navbar-toggleable-md navbar-light">
-      <a class="navbar-brand" href="/">Pizzeria</a>
-      <ul class="nav navbar-nav">
+    <nav class="navbar navbar-expand-sm navbar-light">
+      <a class="navbar-brand" href="/">PIZZERIA</a>
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="">home</a>
         </li>
