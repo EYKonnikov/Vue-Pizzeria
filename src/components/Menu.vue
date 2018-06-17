@@ -16,11 +16,12 @@
           <tr v-for="option in item.options">
             <td>{{option.size}}</td>
             <td>{{option.price}}</td>
-            <td><button class="btn btn-sm btn-outline-success" type="button">+</button></td>
+            <td><button class="btn btn-sm btn-outline-success" type="button" @click="addToBasket(item, option)">+</button></td>
           </tr>
         </tbody>
       </table>
     </div>
+    {{basket}}
   </div>
 </template>
 
@@ -29,6 +30,7 @@
 export default {
   data() {
     return {
+      basket: [],
       getMenuItems: {
         1: {
           name: "Margherita",
@@ -76,6 +78,16 @@ export default {
         }
       }
     };
+  },
+  methods: {
+    addToBasket(item, option) {
+      this.basket.push({
+        name: item.name,
+        price: option.price,
+        size: option.size,
+        quantity: 1
+      });
+    }
   }
 };
 </script>
