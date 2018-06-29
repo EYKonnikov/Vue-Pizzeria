@@ -4,7 +4,7 @@
       <pizzeria-header></pizzeria-header>
     </div>
     <div class="container">
-      <pizzeria-menu></pizzeria-menu>
+      <pizzeria-admin></pizzeria-admin>
     </div>
     <div class="container">
       <pizzeria-footer></pizzeria-footer>
@@ -17,13 +17,15 @@
   import Main from './components/Main.vue'
   import Footer from './components/Footer.vue'
   import Menu from './components/Menu.vue'
+  import Admin from './components/Admin.vue'
 
   export default {
     components: {
       pizzeriaHeader: Header,
       pizzeriaMain: Main,
       pizzeriaFooter: Footer,
-      pizzeriaMenu: Menu
+      pizzeriaMenu: Menu,
+      pizzeriaAdmin: Admin
     }
   }
 </script>
