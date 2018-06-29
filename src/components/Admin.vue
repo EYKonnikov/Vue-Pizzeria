@@ -41,7 +41,6 @@
               <strong><em>Order Number: 1</em></strong>
               <button class="btn btn-outline-danger btn-sm">x</button>
             </div>
-
             <tr>
               <td>Margherita</td>
               <td>9"</td>
