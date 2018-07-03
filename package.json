@@ -10,8 +10,9 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "vue": "^2.5.11",
-    "gulp-refresh": "^1.0.0"
+    "firebase": "^5.2.0",
+    "gulp-refresh": "^1.0.0",
+    "vue": "^2.5.11"
   },
   "browserslist": [
     "> 1%",
