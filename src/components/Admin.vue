@@ -51,6 +51,11 @@
         </table>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12 col-lg-6">
+        <pizzeria-login></pizzeria-login>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -59,10 +64,11 @@
 
 <script>
 import NewPizza from './NewPizza.vue'
-
+import Login from './Login.vue'
 export default {
   components: {
-    pizzeriaNewPizza: NewPizza
+    pizzeriaNewPizza: NewPizza,
+    pizzeriaLogin: Login
   }
 }
 </script>
