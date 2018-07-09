@@ -4,7 +4,7 @@
       <pizzeria-header></pizzeria-header>
     </div>
     <div class="container">
-      <pizzeria-admin></pizzeria-admin>
+      <router-view></router-view>
     </div>
     <div class="container">
       <pizzeria-footer></pizzeria-footer>
@@ -14,18 +14,13 @@
 
 <script>
   import Header from './components/Header.vue'
-  import Main from './components/Main.vue'
   import Footer from './components/Footer.vue'
-  import Menu from './components/Menu.vue'
-  import Admin from './components/Admin.vue'
+  
 
   export default {
     components: {
       pizzeriaHeader: Header,
-      pizzeriaMain: Main,
-      pizzeriaFooter: Footer,
-      pizzeriaMenu: Menu,
-      pizzeriaAdmin: Admin
+      pizzeriaFooter: Footer
     }
   }
 </script>

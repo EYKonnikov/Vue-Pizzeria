@@ -9,11 +9,11 @@
             <th>Add to basket</th>
           </tr>
         </thead>
-        <tbody v-for-key="item in getMenuItems">
+        <tbody v-for="item in getMenuItems">
           <tr>
             <td><strong>{{item.name}}</strong></td>
           </tr>
-          <tr v-for-key="option in item.options">
+          <tr v-for="option in item.options">
             <td>{{option.size}}</td>
             <td>{{option.price}}</td>
             <td><button class="btn btn-sm btn-outline-success" type="button" @click="addToBasket(item, option)">+</button></td>
@@ -33,7 +33,7 @@
             <th>Total</th>
           </tr>
         </thead>
-        <tbody v-for-key="item in basket">
+        <tbody v-for="item in basket">
           <tr>
             <td>
               <button class="btn btn-sm" type="button" @click="decreaseQuantity(item)">-</button>
