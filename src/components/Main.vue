@@ -4,7 +4,7 @@
       <div class="background">
         <h1 class="main__title">Welcome to Pizzeria!</h1>
         <h2 class="main__paragraph">Feeling hungry?</h2>
-        <button class="btn btn-success">Let's order!</button>
+        <button class="btn btn-success" @click="goToMenu">Let's order!</button>
       </div>
     </div>
   </div>
@@ -36,4 +36,15 @@
   
   
 </style>
+
+<script>
+export default {
+  methods: {
+    goToMenu() {
+      this.$router.push({name: 'menuLink'})
+    }
+  }
+}
+</script>
+
 
