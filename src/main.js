@@ -15,7 +15,10 @@ Vue.use(VueRouter)
 
 const routes = [
   { path: '/', name: 'mainLink', component: Main },
-  { path: '/admin', name: 'adminLink', component: Admin },
+  { path: '/admin', name: 'adminLink', component: Admin, beforeEnter: (to, from, next) => {
+    alert('This area is for authorised users only, please login to continue.');
+    next();
+  }},
   { path: '/menu', name: 'menuLink', component: Menu },
   { path: '/about', name: 'aboutLink', component: About, children: [
     { path: '/contact', name: 'contactLink', component: Contact },
