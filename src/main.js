@@ -32,9 +32,6 @@ const router = new VueRouter({
   mode: 'history'
 })
 
-router.beforeEach((to, from, next) => {
-  alert('navigation')
-})
 
 new Vue({
   el: '#app',
