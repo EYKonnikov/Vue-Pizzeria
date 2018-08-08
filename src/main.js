@@ -9,6 +9,7 @@ import History from './components/History.vue'
 import OrderingGuide from './components/OrderingGuide.vue'
 import Admin from './components/Admin.vue'
 import App from './App.vue'
+import { runInContext } from 'vm';
 
 
 Vue.use(VueRouter)
@@ -32,7 +33,14 @@ const routes = [
 
 const router = new VueRouter({
   routes,
-  mode: 'history'
+  mode: 'history',
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    } 
+  }
 })
 
 
