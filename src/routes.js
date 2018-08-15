@@ -12,7 +12,12 @@ import Admin from './components/Admin.vue'
 export const routes = [{
     path: '/',
     name: 'mainLink',
-    component: Main
+    components: {
+      default: Main,
+      "ordering-guide": OrderingGuide,
+      "delivery": Delivery,
+      "history": History
+    }
   },
   {
     path: '/admin',
