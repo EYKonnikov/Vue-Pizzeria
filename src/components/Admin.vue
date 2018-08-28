@@ -24,7 +24,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <h3>Current orders:</h3>
+        <h3>Current orders: {{ numberOfOrders }}</h3>
         <table class="table table-sm">
 
           <thead class="thead-light">
@@ -73,6 +73,9 @@ export default {
   computed: {
     getMenuItems() {
       return this.$store.state.menuItems
+    },
+    numberOfOrders() {
+      return this.$store.getters.numberOfOrders
     }
   },
   beforeRouteLeave: (to, from, next) => {

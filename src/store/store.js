@@ -45,6 +45,11 @@ export const store = new Vuex.Store({
           }
         ]
       }
-    }
+    },
+    orders: []
+  },
+  getters: {
+    getMenuItems: state => state.menuItems,
+    numberOfOrders: state => state.orders.length
   }
 })
