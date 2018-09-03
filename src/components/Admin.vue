@@ -65,18 +65,18 @@
 <script>
 import NewPizza from './NewPizza.vue'
 import Login from './Login.vue'
+import { mapGetters } from 'vuex'
+
 export default {
   components: {
     pizzeriaNewPizza: NewPizza,
     pizzeriaLogin: Login
   },
   computed: {
-    getMenuItems() {
-      return this.$store.state.menuItems
-    },
-    numberOfOrders() {
-      return this.$store.getters.numberOfOrders
-    }
+    ...mapGetters ([
+      'numberOfOrders',
+      'getMenuItems'
+    ])
   },
   beforeRouteLeave: (to, from, next) => {
     if(confirm("Have you remebered to log out") == true) {

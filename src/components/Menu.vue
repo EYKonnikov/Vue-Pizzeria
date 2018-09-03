@@ -57,49 +57,49 @@
 
 
 <script>
-export default {
-  data() {
-    return {
-      basket: [],
-      basketText: 'Your basket is empty!',
-    }
-  },
-
-  computed: {
-    getMenuItems() {
-      // return this.$store.state.menuItems
-      return this.$store.getters.getMenuItems
-    }
-  },
-  methods: {
-    addToBasket(item, option) {
-      this.basket.push({
-        name: item.name,
-        price: option.price,
-        size: option.size,
-        quantity: 1
-      })
-    },
-    removeFromBasket(item) {
-      this.basket.splice(this.basket.indexOf(item), 1);
-    },
-    increaseQuantity(item) {
-      item.quantity++;
-    },
-    decreaseQuantity(item) {
-      item.quantity--;
-
-      if(item.quantity === 0) {
-        this.removeFromBasket(item)
+import { mapGetters } from 'vuex'
+  export default {
+    data() {
+      return {
+        basket: [],
+        basketText: 'Your basket is empty!',
       }
     },
-    addNewOrder() {
-      this.$store.commit('addOrder', this.basket)
-      this.basket = []
-      this.basketText = "Thank you, your order has been placed :)"
+
+    computed: {
+      ...mapGetters ([
+        'getMenuItems'
+      ])
+    },
+    methods: {
+      addToBasket(item, option) {
+        this.basket.push({
+          name: item.name,
+          price: option.price,
+          size: option.size,
+          quantity: 1
+        })
+      },
+      removeFromBasket(item) {
+        this.basket.splice(this.basket.indexOf(item), 1);
+      },
+      increaseQuantity(item) {
+        item.quantity++;
+      },
+      decreaseQuantity(item) {
+        item.quantity--;
+
+        if(item.quantity === 0) {
+          this.removeFromBasket(item)
+        }
+      },
+      addNewOrder() {
+        this.$store.commit('addOrder', this.basket)
+        this.basket = []
+        this.basketText = "Thank you, your order has been placed :)"
+      }
     }
-  }
-};
+  };
 </script>
 
 
